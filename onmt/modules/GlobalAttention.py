@@ -173,7 +173,7 @@ class GlobalAttention(nn.Module):
         if memory_lengths is not None:
             mask = sequence_mask(memory_lengths)
             mask = mask.unsqueeze(1)  # Make it broadcastable.
-            align.data.masked_fill_(1 - mask, -float('inf'))
+            align.data.masked_fill_(~mask, -float('inf'))
 
         # Softmax to normalize attention weights
         align_vectors = self.sm(align.view(batch*targetL, sourceL))

@@ -150,7 +150,7 @@ class LossComputeBase(nn.Module):
         num_correct = pred.eq(target) \
                           .masked_select(non_padding) \
                           .sum()
-        return onmt.Statistics(loss[0], non_padding.sum(), num_correct)
+        return onmt.Statistics(loss.item(), non_padding.sum(), num_correct)
 
     def _bottle(self, v):
         return v.view(-1, v.size(2))

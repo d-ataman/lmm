@@ -1070,7 +1070,10 @@ class StdWordRNNDecoder(RNNWordDecoderBase):
 
             # Get the word prediction with the word-level RNN.
             wordrnn_input = torch.cat([emb_t, input_feed], 1)
+
+            #import pdb; pdb.set_trace()
             wordrnn_output, hidden = self.rnn(wordrnn_input, hidden)
+
             wordrnn_output = wordrnn_output + emb_t # resid connection
             wordrnn_output = self.dropout(wordrnn_output)
 

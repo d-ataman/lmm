@@ -13,7 +13,7 @@ This software implements the Neural Machine Translation model based on Hierchica
 
   and
 
-  ```-decoder_type vae_charrnn``` in train.py
+  ```-decoder_type charrnn``` and ```-tgt_data_type characters```  in train.py
   
   The feature dimensions are hardcoded to 100 for the lemma and 10 for inflectional feature vectors, you can change this depending on your language or data size.
 
