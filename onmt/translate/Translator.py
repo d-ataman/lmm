@@ -410,8 +410,8 @@ class Translator(object):
 
         # (0) Prep each of the components of the search.
         # And helper method for reducing verbosity.
-        max_chars = 20
-        self.max_length = 200
+        max_chars = 250
+        self.max_length = 250
         batch_size = batch.batch_size
         src_data_type = data.src_data_type
         tgt_data_type = data.tgt_data_type

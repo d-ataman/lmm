@@ -1079,10 +1079,11 @@ class StdWordRNNDecoder(RNNWordDecoderBase):
 
             # Sample the latent variables
             z = self.sampler_z(wordrnn_output, batch_size, translate) # lemma
-            f, logloss = self.sampler_f(torch.cat([wordrnn_output, z], dim=1), batch_size, translate) # morphological features
+            #f, logloss = self.sampler_f(torch.cat([wordrnn_output, z], dim=1), batch_size, translate) # morphological features
             #word_rep = self.tanh(self.wordcomposition(torch.cat([z, f], dim=1)))
+            f = torch.Tensor([[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]).cuda()
+            logloss=0
             word_rep = self.wordcomposition(torch.cat([z, f], dim=1))
-
             # Get the predicted word using the attention.
             attn_out, p_attn, ctx = self.attn(
                 word_rep,
