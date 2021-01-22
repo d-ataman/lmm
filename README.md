@@ -26,12 +26,13 @@ For information about how to install and use OpenNMT-py:
 ## Citation
 
 If you use this software, please cite:
+
 @article{lmm,
   author    = {Duygu Ataman and
                Wilker Aziz and
                Alexandra Birch},
   title     = {A Latent Morphology Model for Open-Vocabulary Neural Machine Translation},
-  booktitle = {Under Review as Conference Paper at ICLR},
-  year      = {2019},
+  booktitle = ICLR},
+  year      = {2020},
 }
 ```
